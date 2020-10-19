@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reactJS</title>
+</head>
+<body>
+    <div id="hasil"></div>
+    
+    <!-- library reactJS -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+     function Max(props) {
+        let bil1 = props.a;
+        let bil2 = props.b;
+        let bil3 = props.c;
+        let max;
+        // if(max > props.b) {max = props.b};
+        // if(max > props.c) {max = props.c};
+        if (bil1 > bil2 && bil1 > bil3) {
+            max = bil1;
+        } else if (bil2 > bil1 && bil2 > bil3) {
+            max = bil2 ;
+        } else {
+            max = bil3;
+        }
+           return (
+            <div>tertinggi adalah {max}</div>
+        )
+     }
+
+     function ElemenHTML() {
+         return (
+             <div>
+                <h1>Biodata Mahasiswa</h1>
+                <Max a={5} b={7} c={9}/>
+            </div>
+         )
+     }
+        
+        ReactDOM.render(<ElemenHTML/>, hasil);
+    </script>
+</body>
+</html>
